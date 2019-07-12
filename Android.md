@@ -60,6 +60,46 @@ Application components
  7. Class Myservices extends Service { }
  8. Example: A services may play a music in the background when it is in different application, or it might fetch data from the server with out blocking the user interaction in activity like file download.
  
+ UnBound Service : 
+ ===============
+ 1. Unbounded Service is used to perform long repetitive task
+ 
+ 2. The life cycle methods of unbound service are
+ 	onCreate()
+	onStartCommand()
+	onDestroy()
+	
+	onCreate() This method is invoked when an Service is first created using onStartCommand() or onBind() This is required to perform one time setup
+	
+	onStartCommand() This method is invoked when an activity starts the service by calling startService(). if we implement this method it's our responsibality to stop the service by calling stopself() or stopservice()
+	
+	onDestroy() The system calls this method when the service is no longer used and is being destroyed. Your service should implement this to clean up any resources such as threads, registered listeners, receivers, etc.
+ 
+ 
+ Bound Service :
+ ===============
+ 1. Bounded Service is used to perform background task in bound with another component
+ 
+ 2. The Lifecycle methods of Bound service are 
+ 	onCreate()
+	onBind()
+	onUnbind()
+	onDestroy()
+	
+	onCreate() This method is invoked when an Service is first created using onStartCommand() or onBind() This is required to perform one time setup
+	
+	onBind() This method is invoked when another component want to bind with the service by calling bindService(), If you implement this method we must provide an interface that clients used to communicate with this service by returning IBinder object , we must always implement this method , but if you dont want to allow binding simply return null.
+	
+	onUBind() This method is invoked when all clients have disconnected from a particular interface published by the service.
+	
+	onDestroy() The system is invoked when the service is no longer used and is being destroyed. Your service should implement this to clean up any resources such as threads, registered listeners, receivers, etc.
+	
+NOTE: 
+	onStartCommand() method has integer return type value which can be any of the following: 
+	START_STICKY tells the OS to recreate the service after it has enough memory and call onStartCommand() again with a null intent.
+    START_NOT_STICKY tells the OS to not bother recreating the service again.
+	START_REDELIVER_INTENT that tells the OS to recreate the service AND redelivery the same intent to onStartCommand(). 
+
  
  Broadcast Receivers
  =======================
