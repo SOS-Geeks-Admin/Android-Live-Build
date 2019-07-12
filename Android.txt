@@ -12,10 +12,10 @@ Application components
  
  1. Activity represents a single screen with an user interface.
  2. One app can contain any number of activities all activities must be registered in the androidmanifest.xml file
- 3. Syntax: Class MyActivity Extends AppcompatActivity{ }
+ 3. To create an Activity we must create a class that Extends AppCompatActivity and overide onCreate() method
+	Syntax: Class MyActivity Extends AppcompatActivity{ }
  4. Oncreate methods should be compulsary override.
- 4. Example: Email App contains the 2 Text fields, to mention the to address and the description and a button called compose all this view are placed inside 1 activity.
- 5. Class that extends AppcompatActivity and overide oncreate() method
+ 5. Example: Email App contains the 2 Text fields, to mention the to address and the description and a button called compose all this view are placed inside 1 activity.
  
  Fragments
  
