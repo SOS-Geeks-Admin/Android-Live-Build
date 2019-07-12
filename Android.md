@@ -9,6 +9,7 @@ Application components
 	
 	
  Activities
+ =======================
  
  1. Activity represents a single screen with an user interface.
  2. One app can contain any number of activities all activities must be registered in the androidmanifest.xml file
@@ -18,9 +19,10 @@ Application components
  5. Example: Email App contains the 2 Text fields, to mention the to address and the description and a button called compose all this view are placed inside 1 activity.
  
  Fragments
+ =======================
  
  1. Fragment is a part of an activity , It is also an reusable portions of user interface
- 2. Fragments can be added using XML or programaticaaly during runtime.
+ 2. Fragments can be added in 2 ways using XML or programaticaaly during runtime.
  3. By using XML (Adding Fragment in activity_main.xml)
 		<fragment
 		android:id="@+id/fragments"
@@ -44,10 +46,11 @@ Application components
  7. Syntax to create Fragment is Create a class that extends Fragment and overide OnCreateView() the OncreateView() takes three parameters LayoutInfalter,container,Bundle, In OnCreateView we will inflate the layout
  
  Services
+ =======================
  
  1. Services are the long running process that are executed in background of an android device.
  2. Services do not require any user interface.
- 3.	Services are not bound to the lifecycle of an Activity, it runs in the background even if the Activity or Application is Destroyed
+ 3.	Service is not bound to the lifecycle of an Activity, it runs in the background even if the Activity or Application is Destroyed
  4. Their are 3 types of service 
 	1 UnBoundService or Start Service
 	2 BoundService and
@@ -59,6 +62,7 @@ Application components
  
  
  Broadcast Receivers
+ =======================
  
  1. An android app which receives the message from another app or from the android system itself
  
@@ -74,14 +78,14 @@ An Android app has activities. Context is like a handle to the environment your 
 
 
 Application Context: 
---------------------
+
 This context is tied to the lifecycle of an application. The application context(getApplicationContext()) can be used where you need a context whose lifecycle is separate from the current context or when you are passing a context beyond the scope of an activity.
 
 Example Use: If you have to create a singleton object for your application and that object needs a context, always pass the application context.
 
 
 Activity Context
----------------
+
 This context is available in an activity. This context is tied to the lifecycle of an activity. The activity context should be used when you are passing the context in the scope of an activity or you need the context whose lifecycle is attached to the current context.
 
 
@@ -104,21 +108,21 @@ It can be done in three different ways:
 
 
 Data Binding
-------------
+=======================
 DataBinding layout is different than the normal layout , It starts with the root Tag <layout> and followed by the <data> Tag, the <data> tag contains the multiple <variable> tag within it to describes the property and and then followed by <view> tag and for each layout file ,
 for example the layout filename is activity_main.xml so the corresponding generated class is ActivityMainBinding. this class holds all the bindings from the layout properties
 
 
 
 Two Way Data Binding
-------------------
+=======================
 Two-way Data Binding is a technique of binding your objects to your XML layouts such that the Object and the layout can both send data to each other.
 In our case, the ViewModel can send data to the layout and also observe changes.
 For this, we need a BindingAdapter and custom attribute defined in the XML.
 
 
 @Bindable
----------
+
 The Bindable annotation should be applied to any getter accessor method of an Observable class. Bindable will generate a field in the BR class to identify the field that has changed. 
 
 
