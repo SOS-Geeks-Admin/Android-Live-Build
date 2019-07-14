@@ -47,7 +47,7 @@ Application components
  
  Services
  =======================
- 
+
  1. Services are the long running process that are executed in background of an android device.
  2. Services do not require any user interface.
  3.	Service is not bound to the lifecycle of an Activity, it runs in the background even if the Activity or Application is Destroyed
@@ -94,7 +94,7 @@ Application components
 	
 	onDestroy() The system is invoked when the service is no longer used and is being destroyed. Your service should implement this to clean up any resources such as threads, registered listeners, receivers, etc.
 	
-NOTE: 
+ NOTE: 
 	onStartCommand() method has integer return type value which can be any of the following: 
 	START_STICKY tells the OS to recreate the service after it has enough memory and call onStartCommand() again with a null intent.
     START_NOT_STICKY tells the OS to not bother recreating the service again.
@@ -151,25 +151,30 @@ NOTE:
 	
  Content Providers
  ===================
- 
+
  
 	
-Context
-=======
-A Context is a handle to the system; it provides services like resolving resources, obtaining access to databases and preferences, and so on.
-An Android app has activities. Context is like a handle to the environment your application is currently running in.
+ Context
+ =======
+ 
+ 1. A Context is a handle to the system; it provides services like resolving resources, obtaining access to databases and preferences, and so on.
+ 2. An Android app has activities. Context is like a handle to the environment your application is currently running in.
 
 
-Application Context: 
+ Application Context: 
+ =======================
 
-This context is tied to the lifecycle of an application. The application context(getApplicationContext()) can be used where you need a context whose lifecycle is separate from the current context or when you are passing a context beyond the scope of an activity.
+ 1. This context is tied to the lifecycle of an application.
+ 2. The application context(getApplicationContext()) can be used where you need a context whose lifecycle is separate from the current context or when you are passing a context beyond the scope of an activity.
+ 3. Example Use: If you have to create a singleton object for your application and that object needs a context, always pass the application context.
 
-Example Use: If you have to create a singleton object for your application and that object needs a context, always pass the application context.
 
+ Activity Context
+ ================
 
-Activity Context
-
-This context is available in an activity. This context is tied to the lifecycle of an activity. The activity context should be used when you are passing the context in the scope of an activity or you need the context whose lifecycle is attached to the current context.
+ 1. This context is available in an activity.
+ 2. This context is tied to the lifecycle of an activity.
+ 3. The activity context should be used when you are passing the context in the scope of an activity or you need the context whose lifecycle is attached to the current context.
 
 
 
