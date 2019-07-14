@@ -178,40 +178,43 @@ Application components
 
 
 
-There are two ways to implement MVVM in Android:
+ There are two ways to implement MVVM in Android:
 
     Data Binding
     RXJava
 
-ViewModel notifies the View when to show a Toast Message without keeping a reference of the View.
+ ViewModel notifies the View when to show a Toast Message without keeping a reference of the View.
 
-NOTE::
-How is it possible to notify some class without having a reference of it?
+ NOTE::
+ How is it possible to notify some class without having a reference of it?
 
-It can be done in three different ways:
+ It can be done in three different ways:
 
     Using Two Way Data Binding
     Using Live Data
     Using RxJava
 
 
-Data Binding
-=======================
-DataBinding layout is different than the normal layout , It starts with the root Tag <layout> and followed by the <data> Tag, the <data> tag contains the multiple <variable> tag within it to describes the property and and then followed by <view> tag and for each layout file ,
-for example the layout filename is activity_main.xml so the corresponding generated class is ActivityMainBinding. this class holds all the bindings from the layout properties
+ Data Binding
+ =======================
+ 
+ 1. DataBinding layout is different than the normal layout
+ 2. It starts with the root Tag <layout> and followed by the <data> Tag, 
+ 3. The <data> tag contains the multiple <variable> tag within it to describes the property and and then followed by <view> tag and for each layout file ,
+    for example the layout filename is activity_main.xml so the corresponding generated class is ActivityMainBinding. this class holds all the bindings from the layout properties
 
 
 
-Two Way Data Binding
-=======================
-Two-way Data Binding is a technique of binding your objects to your XML layouts such that the Object and the layout can both send data to each other.
-In our case, the ViewModel can send data to the layout and also observe changes.
-For this, we need a BindingAdapter and custom attribute defined in the XML.
+ Two Way Data Binding
+ =======================
+ 
+ 1. Two-way Data Binding is a technique of binding your objects to your XML layouts such that the Object and the layout can both send data to each other.
+ 2. In our case, the ViewModel can send data to the layout and also observe changes.
+ 3. For this, we need a BindingAdapter and custom attribute defined in the XML.
 
 
-@Bindable
-
-The Bindable annotation should be applied to any getter accessor method of an Observable class. Bindable will generate a field in the BR class to identify the field that has changed. 
+ @Bindable
+ The Bindable annotation should be applied to any getter accessor method of an Observable class. Bindable will generate a field in the BR class to identify the field that has changed. 
 
 
 
