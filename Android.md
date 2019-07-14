@@ -104,12 +104,55 @@ NOTE:
  Broadcast Receivers
  =======================
  
- 1. An android app which receives the message from another app or from the android system itself
+ 1. An android app which receives the broadcast message from another app or from the android system itself.
+ 2. Broadcast is sent when an particular event occurs
+ 3. Android sytem sends a broadcast like battery low, Boot finished, Airplane mode on off, Internet connectivity available not available.
+ 4. A broadcast can be received in 2 ways
+	manifest declared receiver
+	context registered 
+ 5 Create a class that extends BroadcastReceiver and overide onreceive() method
+ 6 If we register a receiver in oncreate method we should unregister it in onDestroy() method
+ 7 If we register a receiver in onResume method we should unregister it in onPause() method
+
+	1 Manifest Declared Receivers : If we declare a broadcast receiver in manifest it will trigger even if our application is not in foreground .
+	
+		<receiver android:name=".InternetBroadcast">
+            <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE" />
+            </intent-filter>
+		</receiver>
+
+	2 Context Registered Receivers : If we declare a broadcast receiver in code it will trigger only if the appliction is in foreground.
+
+		InternetBroadcast internetBroadcast = new InternetBroadcast();
+		IntentFilter intentFilter = new IntentFilter();
+		registerReceiver(internetBroadcast,intentFilter);	
  
 	
+ Custom BroadcastReceiver
+ 
+	<receiver android:name=".InternetBroadcast">
+            <intent-filter>
+                <action android:name="my.custom.broadcast" />
+				<category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+	</receiver>
+	
+	In Activity class
+	Intent intent = new Intent();
+	intent.setAction(my.custom.broadcast);
+	intent.addCategory(Intent.CATEGORY_DEFAULT);
+	sendBroadacast(intent);
+	
+	1. To secure Broadcast use Exported = false so other application could'nt able to trigger your broadcast
+	2. Another way to secure Broadcast receiver is LocalBroadcastManager
+	3. Note: Above Nougat version If we declare a broadcast receiver in manifest it will not trigger even if our application is in foreground . we need to register dynamically in code
 	
 	
-	
+ Content Providers
+ ===================
+ 
+ 
 	
 Context
 =======
