@@ -78,7 +78,7 @@ Application components
  
  Bound Service :
  ===============
- 1. Bounded Service is used to perform background task in bound with another component
+ 1. Bounded Service is used to perform background task and bound with another component
  
  2. The Lifecycle methods of Bound service are 
  	onCreate()
