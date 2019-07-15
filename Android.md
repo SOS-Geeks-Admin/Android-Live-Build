@@ -177,11 +177,35 @@ Application components
  3. The activity context should be used when you are passing the context in the scope of an activity or you need the context whose lifecycle is attached to the current context.
 
 
-
- There are two ways to implement MVVM in Android:
-
+ MVVM in Android
+ ===============
+ 
+ There are three ways to implement MVVM in Android:
     Data Binding
     RXJava
+	Live Data
+
+ Android Architecture Components
+ ===============================
+ 
+ 1. Android Architecture Components are part of Android JetPack 
+ 2. Android Architecture components contains a set of Libraries which helps to deal with the boilerplate code, managing Activity Lifecycle, configuration changes, memory Link
+ 3. Android Architecture components are
+ 	
+	Data Binding : DataBinding helps in binding the UI elements present in our layout to data sources of our app.
+	Lifecycles	 : It manages the Activity and Fragment Lifecycle , It helps to avoid memory leaks and also take care of Configuration changes.
+	LiveData	 : It notifies views if any database changed 
+	Navigation	 : It handles in-app navigations
+	Paging		 : It helps to load the information on demand from datasource
+	Room		 : It is a wrapper of sqlite , it helps to avoid boilerplate code and easily convert Sqlite table data to java objects.
+	ViewModel	 : It stores UI-related data that isn't destroyed on app rotations.
+	WorkManager  : It manages every background jobs in Android with the circumstances we choose.
+	
+	
+	
+ 
+
+
 
  ViewModel notifies the View when to show a Toast Message without keeping a reference of the View.
 
@@ -193,6 +217,16 @@ Application components
     Using Two Way Data Binding
     Using Live Data
     Using RxJava
+	
+ The Advantage of using LiveData is
+ 
+	1 .Ensures your UI matches your data state.
+	2. No memory leaks.
+	3. No crashes due to stopped activities.
+	4. No more manual lifecycle handling.
+	5. Sharing resources.
+ 
+ 	
 
 
  Data Binding
