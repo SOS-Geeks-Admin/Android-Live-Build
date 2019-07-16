@@ -1,12 +1,19 @@
-Application components
-=======================
+ Android Architecture
+ ==================================
+ 1. Linux Kernal
+ 2. Hardware Abstraction Layer
+ 3. Native C/C++ Library along with ART
+ 4. Java API framework
+ 5. System Apps
+
+ Application components
+ =======================
 
  1. Application components are the essential building blocks of the application, 
  2. This components are loosely coupled from the manifest file, 
  3. AndroidManifest.xml describes each component of the application and how they interact
  4. Basic Components : Activities,services,broadcastreciver,contentproviders,Notifications
  5. Additional components: Fragments,views,Layouts,resources and manifest.
-	
 	
  Activities
  =======================
@@ -79,8 +86,11 @@ Application components
  Bound Service :
  ===============
  1. Bounded Service is used to perform background task and bound with another component
- 
- 2. The Lifecycle methods of Bound service are 
+ 2. There are total 3 ways to bind a service with application components
+    Using IBinder class
+    Using Messanger class
+    Using AIDL
+ 3. The Lifecycle methods of Bound service are 
  	onCreate()
 	onBind()
 	onUnbind()
