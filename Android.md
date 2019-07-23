@@ -202,20 +202,14 @@
  2. Android Architecture components contains a set of Libraries which helps to deal with the boilerplate code, managing Activity Lifecycle, configuration changes, memory Link
  3. Android Architecture components are
  	
-	Data Binding : DataBinding helps in binding the UI elements present in our layout to data sources of our app.
-	Lifecycles	 : It manages the Activity and Fragment Lifecycle , It helps to avoid memory leaks and also take care of Configuration changes.
-	LiveData	 : It notifies views if any database changed 
-	Navigation	 : It handles in-app navigations
-	Paging		 : It helps to load the information on demand from datasource
-	Room		 : It is a wrapper of sqlite , it helps to avoid boilerplate code and easily convert Sqlite table data to java objects.
-	ViewModel	 : It stores UI-related data that isn't destroyed on app rotations.
-	WorkManager  : It manages every background jobs in Android with the circumstances we choose.
-	
-	
-	
- 
-
-
+	1. Data Binding  : DataBinding helps in binding the UI elements present in our layout to data sources of our app.
+	2. Lifecycles	 : It manages the Activity and Fragment Lifecycle , It helps to avoid memory leaks and also take care of Configuration changes.
+	3. ViewModel	 : viewModel stores UI-related data that isn't destroyed on app rotations.
+	4. LiveData	 	 : LiveData takes in an observer and notifies it about data changes only when it is in STARTED or RESUMED state.
+	5. Navigation	 : Navigation handles in-app navigations
+	6. Paging		 : Paging helps to load the information on demand from datasource
+	7. Room		 	 : Room is a wrapper of sqlite , it helps to avoid boilerplate code and easily convert Sqlite table data to java objects.
+	8. WorkManager   : WorkManger manages every background jobs in Android with the circumstances we choose.
 
  ViewModel notifies the View when to show a Toast Message without keeping a reference of the View.
 
@@ -235,8 +229,6 @@
 	3. No crashes due to stopped activities.
 	4. No more manual lifecycle handling.
 	5. Sharing resources.
- 
- 	
 
 
  Data Binding
