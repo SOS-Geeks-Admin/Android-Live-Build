@@ -124,21 +124,18 @@
  6. If we register a receiver in oncreate method we should unregister it in onDestroy() method
  7. If we register a receiver in onResume method we should unregister it in onPause() method
 
- Manifest Declared Receivers : If we declare a broadcast receiver in manifest it will trigger even if our application is not in foreground .
-	
+ Manifest Declared Receivers : If we declare a broadcast receiver in manifest it will trigger even if our application is not in foreground .	
 		<receiver android:name=".InternetBroadcast">
             <intent-filter>
                 <action android:name="android.intent.action.AIRPLANE_MODE" />
             </intent-filter>
 		</receiver>
 
-	2 Context Registered Receivers : If we declare a broadcast receiver in code it will trigger only if the appliction is in foreground.
-
+Context Registered Receivers : If we declare a broadcast receiver in code it will trigger only if the appliction is in foreground.
 		InternetBroadcast internetBroadcast = new InternetBroadcast();
 		IntentFilter intentFilter = new IntentFilter();
 		registerReceiver(internetBroadcast,intentFilter);	
  
-	
  Custom BroadcastReceiver
  
 	<receiver android:name=".InternetBroadcast">
