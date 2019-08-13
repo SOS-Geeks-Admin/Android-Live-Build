@@ -211,8 +211,6 @@
 	7. Room		 	 : Room is a wrapper of sqlite , it helps to avoid boilerplate code and easily convert Sqlite table data to java objects.
 	8. WorkManager   : WorkManger manages every background jobs in Android with the circumstances we choose.
 
- ViewModel notifies the View when to show a Toast Message without keeping a reference of the View.
-
  NOTE::
  How is it possible to notify some class without having a reference of it?
 
@@ -253,4 +251,21 @@
  The Bindable annotation should be applied to any getter accessor method of an Observable class. Bindable will generate a field in the BR class to identify the field that has changed. 
 
 
+LiveData
+==========
 
+ 1. LiveData is a part of the architecture patterns. It’s basically a data holder that contains primitive/collection types.
+ 2. LiveData is based on the Observer Pattern, It helps to communication between the ViewModel and View easy.
+ 3. LiveData notifies the observer using setValue() and postValue().
+ 4. setValue() runs on the main thread.	postValue() runs on the background thread.
+ 5. LiveData is immutable.
+ 
+ 
+Mutable Live Data
+=================
+
+ 1. MutableLiveData is a class that extends the LiveData type class.
+ 2. It provides the setValue(), postValue() methods publicly, something that LiveData class doesn’t provide.
+ 3. MutableLiveData is LiveData which is mutable & thread-safe.
+ 
+ 
