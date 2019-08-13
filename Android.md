@@ -120,11 +120,11 @@
  4. A broadcast can be received in 2 ways
 	manifest declared receiver
 	context registered 
- 5 Create a class that extends BroadcastReceiver and overide onreceive() method
- 6 If we register a receiver in oncreate method we should unregister it in onDestroy() method
- 7 If we register a receiver in onResume method we should unregister it in onPause() method
+ 5. Create a class that extends BroadcastReceiver and overide onreceive() method
+ 6. If we register a receiver in oncreate method we should unregister it in onDestroy() method
+ 7. If we register a receiver in onResume method we should unregister it in onPause() method
 
-	1 Manifest Declared Receivers : If we declare a broadcast receiver in manifest it will trigger even if our application is not in foreground .
+ Manifest Declared Receivers : If we declare a broadcast receiver in manifest it will trigger even if our application is not in foreground .
 	
 		<receiver android:name=".InternetBroadcast">
             <intent-filter>
