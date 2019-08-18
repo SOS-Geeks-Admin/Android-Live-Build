@@ -247,6 +247,13 @@ Context Registered Receivers : If we declare a broadcast receiver in code it wil
  @Bindable
  The Bindable annotation should be applied to any getter accessor method of an Observable class. Bindable will generate a field in the BR class to identify the field that has changed. 
 
+View Model
+==========
+ 1. The ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.
+ 2. ViewModel is reponsible for preparing the data for the view and exposes to any view that is listning for changes.
+ 3. The ViewModel can retain it state across Activity configuration changes.
+ 4. The viewModel stays in memory unti the lifecycle its scope goes away permanently (In case of activity, once it finisshes , In case of fragment once it is detached).
+ 5. If the viewModel needs a ApplicationContext than it can extend AndroidViewModel classs and have a constructor that receives application in the constructor.
 
 LiveData
 ==========
