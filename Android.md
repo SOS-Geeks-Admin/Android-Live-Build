@@ -33,7 +33,7 @@
  3. By using XML (Adding Fragment in activity_main.xml)
 		<fragment
 		android:id="@+id/fragments"
-		android:name="com.abhiandroid.fragmentexample.SimpleFragment"
+		android:name="com.aravind.fragmentexample.SimpleFragment"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:layout_marginTop="10dp" />
@@ -43,12 +43,12 @@
         android:layout_height="match_parent"
         android:id="@+id/fragment_container/>
  5. Adding Fragment Programattically
+ 	 MyFragment f = new MyFragment();
 	 FragmentManager fm = getSupportFragmentManager();
      FragmentTransaction ft = fm.beginTransaction();
      ft.add(R.id.fragment_container, f,null);
 	 ft.addToBackStack(null); // To add fragment to backstack
      ft.commit();
-	
  6. If we add fragment using xml we cannot perform add, remove or replace, if we need to perform this we need to add prgromatically
  7. Syntax to create Fragment is Create a class that extends Fragment and overide OnCreateView() the OncreateView() takes three parameters LayoutInfalter,container,Bundle, In OnCreateView we will inflate the layout
  
@@ -67,9 +67,9 @@
  7. Class Myservices extends Service { }
  8. Example: A services may play a music in the background when it is in different application, or it might fetch data from the server with out blocking the user interaction in activity like file download.
  
- UnBound Service : 
- ===============
- 1. Unbounded Service is used to perform long repetitive task
+ UnBound Service or Start Service : 
+ =================================
+ 1. Unbounded Service/Start Service is used to perform long repetitive task
  
  2. The life cycle methods of unbound service are
  	onCreate()
@@ -114,7 +114,7 @@
  Broadcast Receivers
  =======================
  
- 1. An android app which receives the broadcast message from another app or from the android system itself.
+ 1. An android app can send or receives the broadcast message from the another app or from the android system itself.
  2. Broadcast is sent when an particular event occurs
  3. Android sytem sends a broadcast like battery low, Boot finished, Airplane mode on off, Internet connectivity available not available.
  4. A broadcast can be received in 2 ways
