@@ -116,13 +116,15 @@
  
  1. An android app can send or receives the broadcast message from the another app or from the android system itself.
  2. Broadcast is sent when an particular event occurs
- 3. Android sytem sends a broadcast like battery low, Boot finished, Airplane mode on off, Internet connectivity available not available.
+ 3. Example's like battery low, Boot finished, Airplane mode on off, Internet connectivity available not available, Device starts charging etc...
  4. A broadcast can be received in 2 ways
-	manifest declared receiver
-	context registered 
+		manifest declared receiver / Implicit /Static
+		context registered / Explicit / Dynamic
  5. Create a class that extends BroadcastReceiver and overide onreceive() method
- 6. If we register a receiver in oncreate method we should unregister it in onDestroy() method
+ 6. If we register a receiver in oncreate method we should unregister it in onDestroy() method (Keeps the broadcast for the lifecycle of an activity)
  7. If we register a receiver in onResume method we should unregister it in onPause() method
+ 8. If we register a receiver in onStart() method we should unregister it in onstop() method 
+ 9. To keep the broadcast reciver active as long as the  whole application is running we have to register in the oncreate() method of the application class
 
  Manifest Declared Receivers : If we declare a broadcast receiver in manifest it will trigger even if our application is not in foreground .	
 		<receiver android:name=".InternetBroadcast">
