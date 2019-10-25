@@ -118,6 +118,7 @@
  2. Broadcast is sent when an particular event occurs
  3. Example's like battery low, Boot finished, Airplane mode on off, Internet connectivity available not available, Device starts charging etc...
  4. A broadcast can be received in 2 ways.
+ 
 		1. manifest declared receiver / Implicit /Static
 		2. context registered / Explicit / Dynamic
  5. Create a class that extends BroadcastReceiver and overide onreceive() method
@@ -221,7 +222,7 @@ Context Registered Receivers : If we declare a broadcast receiver in code it wil
 	
  The Advantage of using LiveData is
  
-	1 .Ensures your UI matches your data state.
+	1. Ensures your UI matches your data state.
 	2. No memory leaks.
 	3. No crashes due to stopped activities.
 	4. No more manual lifecycle handling.
