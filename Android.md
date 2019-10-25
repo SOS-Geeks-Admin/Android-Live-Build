@@ -118,8 +118,8 @@
  2. Broadcast is sent when an particular event occurs
  3. Example's like battery low, Boot finished, Airplane mode on off, Internet connectivity available not available, Device starts charging etc...
  4. A broadcast can be received in 2 ways.
-		* manifest declared receiver / Implicit /Static
-		* context registered / Explicit / Dynamic
+		1. manifest declared receiver / Implicit /Static
+		2. context registered / Explicit / Dynamic
  5. Create a class that extends BroadcastReceiver and overide onreceive() method
  6. If we register a receiver in oncreate method we should unregister it in onDestroy() method (Keeps the broadcast for the lifecycle of an activity)
  7. If we register a receiver in onResume method we should unregister it in onPause() method
