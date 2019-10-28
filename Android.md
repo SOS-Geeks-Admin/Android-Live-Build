@@ -115,7 +115,7 @@
  =======================
  
  1. An android app can send or receives the broadcast message from the another app or from the android system itself.
- 2. Broadcast is sent when an particular event occurs
+ 2. Broadcast message can be sent or received when an particular event occurs
  3. Example's like battery low, Boot finished, Airplane mode on off, Internet connectivity available not available, Device starts charging etc...
  4. A broadcast can be received in 2 ways.
  
