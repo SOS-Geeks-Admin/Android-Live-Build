@@ -116,11 +116,11 @@
  
  1. An android app can send or receives the broadcast message from the another app or from the android system itself.
  2. Broadcast message can be sent or received when an particular event occurs
- 3. Example's like battery low, Boot finished, Airplane mode on off, Internet connectivity available not available, Device starts charging etc...
+ 3. Example's like battery low,Incoming call, Message Received, Boot finished, Airplane mode on off, Internet connectivity available not available, Device starts charging etc...
  4. A broadcast can be received in 2 ways.
  
-		1. manifest declared receiver / Implicit /Static
-		2. context registered / Explicit / Dynamic
+		1. manifest declared receiver / Static / Implicit
+		2. context registered / Dynamic / Explicit
  5. Create a class that extends BroadcastReceiver and overide onreceive() method
  6. If we register a receiver in oncreate method we should unregister it in onDestroy() method (Keeps the broadcast for the lifecycle of an activity)
  7. If we register a receiver in onResume method we should unregister it in onPause() method
