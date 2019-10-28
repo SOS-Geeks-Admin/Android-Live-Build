@@ -128,6 +128,7 @@
  9. To keep the broadcast reciver active as long as the  whole application is running we have to register in the oncreate() method of the application class
 
  Manifest Declared Receivers : If we declare a broadcast receiver in manifest it will trigger even if our application is not in foreground .
+ 
     <receiver android:name=".InternetBroadcast">
             <intent-filter>
                 <action android:name="android.intent.action.AIRPLANE_MODE" />
@@ -135,6 +136,7 @@
         </receiver>
 
 Context Registered Receivers : If we declare a broadcast receiver in code it will trigger only if the appliction is in foreground.
+
         InternetBroadcast internetBroadcast = new InternetBroadcast();
         IntentFilter intentFilter = new IntentFilter();
         registerReceiver(internetBroadcast, intentFilter);
