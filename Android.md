@@ -57,7 +57,7 @@
 
  1. Services are the long running process that are executed in background of an android device.
  2. Services do not require any user interface.
- 3.	Service is not bound to the lifecycle of an Activity, it runs in the background even if the Activity or Application is Destroyed
+ 3. Service is not bound to the activity lifecycle, it runs in the background even if the Activity or Application is Destroyed
  4. Their are 3 types of service 
 	1 UnBoundService or Start Service
 	2 BoundService and
