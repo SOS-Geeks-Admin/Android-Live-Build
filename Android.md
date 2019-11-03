@@ -103,12 +103,14 @@ Intent Service :
  3. IntentService Implicitly calls stopself() to destroy
  4. Intent Service is independent of the component in which it is started.
 
-Service CallBack methods and Description:
-========================================
+	Service CallBack methods and Description:
 
 		onCreate() This method is invoked when an Service is first created using onStartCommand() or onBind() This is required to perform one time setup.
+	
 		onStartCommand() This method is invoked when an activity starts the service by calling startService(). if we implement this method it's our responsibality to stop the service by calling stopself() or stopservice().
+	
 		onBind() This method is invoked when another component want to bind with the service by calling bindService(), If you implement this method we must provide an interface that clients used to communicate with this service by returning IBinder object , we must always implement this method , but if you dont want to allow binding simply return null.
+	
 		onUBind() This method is invoked when all clients have disconnected from a particular interface published by the service.
 		onDestroy() The system is invoked when the service is no longer used and is being destroyed. Your service should implement this to clean up any resources such as threads, registered listeners, receivers, etc.
 
