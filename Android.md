@@ -73,10 +73,11 @@
  2. Unbound Service gets starts by calling startService().
  3. Unbound Service is stopped or destroyed explicitly  by calling stopService().
  4. Unbound Service is independent of the component in which it is started.
- 5. The life cycle methods of unbound service are
- 	    onCreate();
-		onStartCommand();
-		onDestroy();
+ 5. The life cycle methods of unbound service are:
+ 
+ 		onCreate();
+    		onStartCommand();
+    		onDestroy();
 	
  Bound Service :
  ===============
@@ -88,8 +89,9 @@
     Using IBinder class
     Using Messanger class
     Using AIDL
- 6. The Lifecycle methods of Bound service are 
- 	    onCreate();
+ 6. The Lifecycle methods of Bound service are: 
+ 		
+		onCreate();
 		onBind();
 		onUnbind();
 		onDestroy();
