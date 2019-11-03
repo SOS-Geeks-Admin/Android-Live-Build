@@ -15,8 +15,8 @@
  4. Basic Components : Activities,services,broadcastreciver,contentproviders,Notifications
  5. Additional components: Fragments,views,Layouts,resources and manifest.
 	
- Activities
- =======================
+ Activities :
+ ============
  
  1. Activity represents a single screen with an user interface.
  2. One app can contain any number of activities all activities must be registered in the androidmanifest.xml file
@@ -25,8 +25,8 @@
  4. Oncreate methods should be compulsary override.
  5. Example: Email App contains the 2 Text fields, to mention the to address and the description and a button called compose all this view are placed inside 1 activity.
  
- Fragments
- =======================
+ Fragments :
+ ===========
  
  1. Fragment is a part of an activity , It is also an reusable portions of user interface
  2. Fragments can be added in 2 ways using XML or programaticaaly during runtime.
@@ -52,8 +52,8 @@
  6. If we add fragment using xml we cannot perform add, remove or replace, if we need to perform this we need to add prgromatically
  7. Syntax to create Fragment is Create a class that extends Fragment and overide OnCreateView() the OncreateView() takes three parameters LayoutInfalter,container,Bundle, In OnCreateView we will inflate the layout
  
- Services
- =======================
+ Services :
+ ===========
 
  1. Services are the long running process that are executed in background of an android device.
  2. Services do not require any user interface.
@@ -67,8 +67,8 @@
  7. Class Myservices extends Service { }
  8. Example: A services may play a music in the background when it is in different application, or it might fetch data from the server with out blocking the user interaction in activity like file download.
  
- UnBound Service or Start Service : 
- =================================
+ UnBound Service :
+ =================
  1. A service is started when an application component, such as an activity, starts it by calling startService(). Once started, a service can run in the background indefinitely, even if the component that started it is destroyed.
  2. Unbound Service gets starts by calling startService().
  3. Unbound Service is stopped or destroyed explicitly  by calling stopService().
@@ -95,7 +95,24 @@
 		onBind();
 		onUnbind();
 		onDestroy();
-		
+
+Intent Service :
+================
+ 1. Intent Service is used to perform one time task i.e when the task completes the service destroys itself.
+ 2. Intent Service gets  starts by calling startService().
+ 3. IntentService Implicitly calls stopself() to destroy
+ 4. Intent Service is independent of the component in which it is started.
+
+Service CallBack methods and Description:
+========================================
+
+		onCreate() This method is invoked when an Service is first created using onStartCommand() or onBind() This is required to perform one time setup.
+		onStartCommand() This method is invoked when an activity starts the service by calling startService(). if we implement this method it's our responsibality to stop the service by calling stopself() or stopservice().
+		onBind() This method is invoked when another component want to bind with the service by calling bindService(), If you implement this method we must provide an interface that clients used to communicate with this service by returning IBinder object , we must always implement this method , but if you dont want to allow binding simply return null.
+		onUBind() This method is invoked when all clients have disconnected from a particular interface published by the service.
+		onDestroy() The system is invoked when the service is no longer used and is being destroyed. Your service should implement this to clean up any resources such as threads, registered listeners, receivers, etc.
+
+
  NOTE: 
 	onStartCommand() method has integer return type value which can be any of the following: 
 	START_STICKY tells the OS to recreate the service after it has enough memory and call onStartCommand() again with a null intent.
@@ -103,8 +120,8 @@
 	START_REDELIVER_INTENT that tells the OS to recreate the service AND redelivery the same intent to onStartCommand(). 
 
  
- Broadcast Receivers
- =======================
+ Broadcast Receivers :
+ =====================
  
  1. An android app can send or receives the broadcast message from the another app or from the android system itself.
  2. Broadcast message can be sent or received when an particular event occurs
