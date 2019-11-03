@@ -69,6 +69,7 @@
  
  UnBound Service :
  =================
+ 
  1. A service is started when an application component, such as an activity, starts it by calling startService(). Once started, a service can run in the background indefinitely, even if the component that started it is destroyed.
  2. Unbound Service gets starts by calling startService().
  3. Unbound Service is stopped or destroyed explicitly  by calling stopService().
@@ -81,6 +82,7 @@
 	
  Bound Service :
  ===============
+ 
  1. A service is bound when an application component binds to it by calling bindService(). A bound service offers a client-server interface that allows components to interact with the service, send requests, get results, and even do so across processes with interprocess communication (IPC).
  2. Bounded Service gets starts by calling bindService().
  3. Bounded Service is unbind or destroyed by calling unbindService().
@@ -98,6 +100,7 @@
 
 Intent Service :
 ================
+ 
  1. Intent Service is used to perform one time task i.e when the task completes the service destroys itself.
  2. Intent Service gets  starts by calling startService().
  3. IntentService Implicitly calls stopself() to destroy
