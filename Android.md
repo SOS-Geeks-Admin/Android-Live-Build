@@ -69,41 +69,31 @@
  
  UnBound Service or Start Service : 
  =================================
- 1. Unbounded Service/Start Service is used to perform long repetitive task
- 
- 2. The life cycle methods of unbound service are
- 	onCreate()
-	onStartCommand()
-	onDestroy()
+ 1. A service is started when an application component, such as an activity, starts it by calling startService(). Once started, a service can run in the background indefinitely, even if the component that started it is destroyed.
+ 2. Unbound Service gets starts by calling startService().
+ 3. Unbound Service is stopped or destroyed explicitly  by calling stopService().
+ 4. Unbound Service is independent of the component in which it is started.
+ 5. The life cycle methods of unbound service are
+ 	    onCreate();
+		onStartCommand();
+		onDestroy();
 	
-	onCreate() This method is invoked when an Service is first created using onStartCommand() or onBind() This is required to perform one time setup
-	
-	onStartCommand() This method is invoked when an activity starts the service by calling startService(). if we implement this method it's our responsibality to stop the service by calling stopself() or stopservice()
-	
-	onDestroy() The system calls this method when the service is no longer used and is being destroyed. Your service should implement this to clean up any resources such as threads, registered listeners, receivers, etc.
- 
- 
  Bound Service :
  ===============
- 1. Bounded Service is used to perform background task and bound with another component
- 2. There are total 3 ways to bind a service with application components
+ 1. A service is bound when an application component binds to it by calling bindService(). A bound service offers a client-server interface that allows components to interact with the service, send requests, get results, and even do so across processes with interprocess communication (IPC).
+ 2. Bounded Service gets starts by calling bindService().
+ 3. Bounded Service is unbind or destroyed by calling unbindService().
+ 4. Bound Service dependents on the component in which it is started.
+ 5. There are total 3 ways to bind a service with application components
     Using IBinder class
     Using Messanger class
     Using AIDL
- 3. The Lifecycle methods of Bound service are 
- 	onCreate()
-	onBind()
-	onUnbind()
-	onDestroy()
-	
-	onCreate() This method is invoked when an Service is first created using onStartCommand() or onBind() This is required to perform one time setup
-	
-	onBind() This method is invoked when another component want to bind with the service by calling bindService(), If you implement this method we must provide an interface that clients used to communicate with this service by returning IBinder object , we must always implement this method , but if you dont want to allow binding simply return null.
-	
-	onUBind() This method is invoked when all clients have disconnected from a particular interface published by the service.
-	
-	onDestroy() The system is invoked when the service is no longer used and is being destroyed. Your service should implement this to clean up any resources such as threads, registered listeners, receivers, etc.
-	
+ 6. The Lifecycle methods of Bound service are 
+ 	    onCreate();
+		onBind();
+		onUnbind();
+		onDestroy();
+		
  NOTE: 
 	onStartCommand() method has integer return type value which can be any of the following: 
 	START_STICKY tells the OS to recreate the service after it has enough memory and call onStartCommand() again with a null intent.
