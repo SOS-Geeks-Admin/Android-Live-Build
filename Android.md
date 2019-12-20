@@ -292,4 +292,9 @@ Mutable Live Data
  2. It provides the setValue(), postValue() methods publicly, something that LiveData class doesn’t provide.
  3. MutableLiveData is LiveData which is mutable & thread-safe.
  
+ ==================
+ Imp Links
+ https://www.quora.com/What-is-difference-between-listview-and-recyclerview-in-Android
+ https://stackoverflow.com/questions/26570325/what-are-recyclerview-advantages-compared-to-listview
+ 
  
