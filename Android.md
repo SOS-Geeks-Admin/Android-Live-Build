@@ -269,9 +269,11 @@ Context Registered Receivers : If we declare a broadcast receiver in code it wil
 
 View Model
 ==========
- 1. The ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.
- 2. ViewModel is reponsible for preparing the data for the view and exposes to any view that is listning for changes.
- 3. The ViewModel can retain it state across Activity configuration changes.
+ 1. ViewModel acts a communication layer between Model and the View
+ 2. ViewModel is a class reponsible for preparing, managing and providing data to the UI (Activity or Fragment).
+ 3. when the Activity is created link it to the ViewModel and the viewmodel survives until and unless the Activity which is created is completly destroyed
+ 4. ViewModel is not same as OnsavedInstanceState() , OnsavedInstanceState() is used to retain small amount of data but viewmodel is used for largeAmount of data like ProductsList etc.
+ 3. The ViewModel can retain it state across configuration changes.
  4. The viewModel stays in memory unti the lifecycle its scope goes away permanently (In case of activity, once it finisshes , In case of fragment once it is detached).
  5. If the viewModel needs a ApplicationContext than it can extend AndroidViewModel classs and have a constructor that receives application in the constructor.
 
@@ -292,8 +294,18 @@ Mutable Live Data
  2. It provides the setValue(), postValue() methods publicly, something that LiveData class doesn’t provide.
  3. MutableLiveData is LiveData which is mutable & thread-safe.
  
- ==================
+ LifeCycle Aware Components
+==========================
+
+ 1. LifeCycleOwner provides Lifecycle status to Lifecycle Aware components.
+ 2. LifeCycleObserver register the LifeCycle status to respond and perform action.
+ 3. LifeCycle owner uses following enumaration to track Lifecycle status
+		Event
+		State
+ 
  Imp Links
+ =========
+ 
  https://www.quora.com/What-is-difference-between-listview-and-recyclerview-in-Android
  https://stackoverflow.com/questions/26570325/what-are-recyclerview-advantages-compared-to-listview
  
