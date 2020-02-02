@@ -281,6 +281,7 @@ View Model
 
  Step 1
 	create a class that extends ViewModel or AndroidViewModel and write ur logics inside it.
+	
 	Ex : public class MainActivityViewModel extends ViewModel {
     // Logics
 }
