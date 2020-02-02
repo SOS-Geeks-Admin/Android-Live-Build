@@ -295,9 +295,9 @@ View Model
 
 LiveData
 ==========
-
- 1. LiveData is a part of the architecture patterns. It’s basically a data holder that contains primitive/collection types.
- 2. LiveData is based on the Observer Pattern, It helps to communication between the ViewModel and View easy.
+ 1. LiveData helps to communication between the ViewModel and View easy.
+ 1. LiveData basically a data holder that contains primitive/collection types.
+ 2. LiveData is based on the Observer Pattern, and it is LifeCycle Aware.
  3. LiveData notifies the observer using setValue() and postValue().
  4. setValue() runs on the main thread.	postValue() runs on the background thread.
  5. LiveData is immutable.
