@@ -269,13 +269,28 @@ Context Registered Receivers : If we declare a broadcast receiver in code it wil
 
 View Model
 ==========
- 1. ViewModel acts a communication layer between Model and the View
+ 1. ViewModel acts as a communication layer between Model and View
  2. ViewModel is a class reponsible for preparing, managing and providing data to the UI (Activity or Fragment).
  3. when the Activity is created link it to the ViewModel and the viewmodel survives until and unless the Activity which is created is completly destroyed
  4. ViewModel is not same as OnsavedInstanceState() , OnsavedInstanceState() is used to retain small amount of data but viewmodel is used for largeAmount of data like ProductsList etc.
  3. The ViewModel can retain it state across configuration changes.
  4. The viewModel stays in memory unti the lifecycle its scope goes away permanently (In case of activity, once it finisshes , In case of fragment once it is detached).
  5. If the viewModel needs a ApplicationContext than it can extend AndroidViewModel classs and have a constructor that receives application in the constructor.
+ 
+ Two steps to follow for ViewModel
+
+ Step 1
+	create a class that extends ViewModel or AndroidViewModel and write ur logics inside it
+	Ex : public class MainActivityViewModel extends ViewModel {
+			// Logics
+		}
+
+ Step 2 In Activity class 
+	
+	Example :
+	MainActivityViewModel mainActivityViewModel = ViewModelProviders.of(MainActivity.this).get(MainActivityViewModel.class);
+        textView.setText(mainActivityViewModel.getNumber());
+
 
 LiveData
 ==========
