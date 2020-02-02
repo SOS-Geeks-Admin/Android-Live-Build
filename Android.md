@@ -277,13 +277,13 @@ View Model
  4. The viewModel stays in memory unti the lifecycle its scope goes away permanently (In case of activity, once it finisshes , In case of fragment once it is detached).
  5. If the viewModel needs a ApplicationContext than it can extend AndroidViewModel classs and have a constructor that receives application in the constructor.
  
- Two steps to follow for ViewModel
+ 'Two steps to follow for ViewModel.'
 
  Step 1
-	create a class that extends ViewModel or AndroidViewModel and write ur logics inside it
+	create a class that extends ViewModel or AndroidViewModel and write ur logics inside it.
 	Ex : public class MainActivityViewModel extends ViewModel {
-			// Logics
-		}
+    // Logics
+}
 
  Step 2 In Activity class 
 	
