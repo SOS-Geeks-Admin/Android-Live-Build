@@ -176,6 +176,35 @@ Context Registered Receivers : If we declare a broadcast receiver in code it wil
 	3. Note: Above Nougat version If we declare a broadcast receiver in manifest it will not trigger even if our application is in foreground . we need to register dynamically in code
 	
 	
+  Intents
+ ========
+ Intents is used to pass message or information between Android components, except Content Provider.
+ 
+ 1. Implicit Intent : Implicit intent is used to invoke system components.
+	
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https://www.google.com"));
+        startActivity(intent);
+
+ 2. Explicit Intent : Used to Invoke Activity class
+
+        Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+        intent.putExtra("KEY", "Value");
+        startActivity(intent);
+
+ 3. Pending Intent	: Intent which you want to trigger at future point of time when your application is not alive
+A PendingIntent is generally used in cases were an AlarmManager needs to be executed or for Notifications. A PendingIntent provides a mean for applications to work, even after their process exits.
+	
+	Intent notifyIntent = new Intent(this, ResultActivity.class);
+        PendingIntent notifyPendingIntent = PendingIntent.getActivity(this, 0, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
+        builder.setContentIntent(notifyPendingIntent);
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        notificationManager.notify(NOTIFICATION_ID, builder.build());
+ 
+ 4. Sticky Intent	: Sticks with Android system, for future broadcast listener. 
+	For example if BATTERY_LOW event occurs then that Intent will stick with Android system so that any future requests for BATTERY_LOW, will return the Intent.
+ 
  Content Providers
  ===================
 
