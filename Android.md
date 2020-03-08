@@ -195,7 +195,7 @@ Context Registered Receivers : If we declare a broadcast receiver in code it wil
  3. Pending Intent	: Intent which you want to trigger at future point of time when your application is not alive
 A PendingIntent is generally used in cases were an AlarmManager needs to be executed or for Notifications. A PendingIntent provides a mean for applications to work, even after their process exits.
 	
-	Intent notifyIntent = new Intent(this, ResultActivity.class);
+		Intent notifyIntent = new Intent(this, ResultActivity.class);
         PendingIntent notifyPendingIntent = PendingIntent.getActivity(this, 0, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
         builder.setContentIntent(notifyPendingIntent);
