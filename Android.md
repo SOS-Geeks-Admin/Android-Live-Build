@@ -204,7 +204,7 @@ A PendingIntent is generally used in cases were an AlarmManager needs to be exec
  
  4. Sticky Intent	: Sticks with Android system, for future broadcast listener. 
 	For example if BATTERY_LOW event occurs then that Intent will stick with Android system so that any future requests for BATTERY_LOW, will return the Intent.
-	
+
 		IntentFilter intentfilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
         	Intent batteryStatus = context.registerReceiver(null, intentfilter);
  
