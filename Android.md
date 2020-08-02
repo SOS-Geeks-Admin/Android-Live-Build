@@ -284,9 +284,22 @@ A PendingIntent is generally used in cases were an AlarmManager needs to be exec
  =======================
  
  1. DataBinding layout is different than the normal layout
- 2. It starts with the root Tag <layout> and followed by the <data> Tag, 
- 3. The <data> tag contains the multiple <variable> tag within it to describes the property and and then followed by <view> tag and for each layout file ,
-    for example the layout filename is activity_main.xml so the corresponding generated class is ActivityMainBinding. this class holds all the bindings from the layout properties
+ 2. It starts with the root Tag 
+	
+	<layout>
+    <data>
+        <variable
+            name="employee"	//Example
+            type="com.aravind.databinding.Employee" /> //Example
+    </data>
+
+    <LinearLayout
+		...
+    />
+</layout>
+ 
+ 3. For each layout file ,it generates the corrosponding .class file which holds all the bindings from the layout properties
+    for example the layout filename is activity_main.xml so the corresponding generated class is ActivityMainBinding.
 
 
 
