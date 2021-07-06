@@ -216,6 +216,23 @@ A PendingIntent is generally used in cases were an AlarmManager needs to be exec
  2. It acts has a central repository to supply data from one application to another application on request.
  3. It stores data in various formats such as files,database or over Internet.
  4. Ex : Contacts app sharing contact's details with whatsapp based on request.
+ 	
+	Steps to create Content Provider
+	================================
+	
+    First of all you need to create a class that extends ContentProvider.
+
+    Second, you need to define your content provider URI address which will be used to access the content.
+	content://<authority>/<path>/<optional_id>
+	content://contacts_info/users/5
+
+    Next you will need to create your own database to keep the content. Usually, overide contentProviderMethods
+	onCreate() , query() , insert() , update() , delete() , getType()
+
+    Next you will have to implement ContentProvider queries to perform different database specific operations.
+
+    Finally register your Content Provider in your activity file using <provider> tag.
+
  
 	
  Context
