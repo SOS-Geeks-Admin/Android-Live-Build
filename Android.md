@@ -212,7 +212,10 @@ A PendingIntent is generally used in cases were an AlarmManager needs to be exec
  
  Content Providers
  ===================
-
+ 1. Content providers is nothing but it provide the data/content from one Android application to another android application or to Android system itself.
+ 2. It acts has a central repository to supply data from one application to another application on request.
+ 3. It stores data in various formats such as files,database or over Internet.
+ 4. Ex : Contacts app sharing contact's details with whatsapp based on request.
  
 	
  Context
