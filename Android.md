@@ -107,6 +107,9 @@ Intent Service :
  2. Intent Service gets  starts by calling startService().
  3. IntentService Implicitly calls stopself() to destroy
  4. Intent Service is independent of the component in which it is started.
+ 5. Intent services queues up the upcoming request and executes them one by one. Once the queue is empty it stops itself, without the user’s intervention in its lifecycle.
+ 6. It does proper thread management by handling the requests on a separate thread.
+
 
 	
 	Service CallBack methods and Description:
