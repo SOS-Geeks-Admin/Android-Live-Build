@@ -223,7 +223,7 @@ A PendingIntent is generally used in cases were an AlarmManager needs to be exec
     First of all you need to create a class that extends ContentProvider.
 
     Second, you need to define your content provider URI address which will be used to access the content.
-	content:// <authority> / <path> / <optional_id>
+	content://authority/path/optional_id
 	content://contacts_info/users/5
 
     Next you will need to create your own database to keep the content. Usually, overide contentProviderMethods
